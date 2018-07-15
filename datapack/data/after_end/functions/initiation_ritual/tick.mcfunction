@@ -1,2 +1,2 @@
 execute as @e[type=minecraft:item,nbt={Item:{tag:{knowledge_tome:1b}}}] at @s positioned ~-1.5 ~ ~-1.5 run function after_end:initiation_ritual/find_structure
-execute as @e[type=minecraft:end_crystal,tag=after_end_started] at @s if score @s aEnd_animTimer matches ..20 run function after_end:initiation_ritual/animate
+execute as @e[type=minecraft:end_crystal,tag=after_end_started] at @s run function after_end:initiation_ritual/animate
