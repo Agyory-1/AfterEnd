@@ -1,5 +1,13 @@
 # List of Custom Items Tick Functions #
 
-execute as @s[nbt={Inventory:[{id:"minecraft:potion",tag:{display:{Name:"{\"text\":\"Cloud in a bottle\",\"color\":\"gray\"}",Lore:["A gentle cloud to boost you up","Press 'Sneak' in mid-air to boost "]},HideFlags:33,Enchantments:[{id:"minecraft:lure",lvl:1}],Potion:"minecraft:slow_falling",CustomPotionColor:11649484}}]}] run function custom_items:cloud_in_a_bottle/tick
+execute as @s[nbt={Inventory:[{id:"minecraft:potion",tag:{Cloud:1b}}]}] run function custom_items:cloud_in_a_bottle/tick
 
+execute unless entity @s[nbt={Inventory:[{id:"minecraft:potion",tag:{Cloud:1b}}]}] run scoreboard players set @s CI.cloud_detect 0 
 
+execute as @s[nbt={SelectedItem:{id:"minecraft:fire_charge",tag:{Smoke:1b}}}] run function custom_items:smoke_bomb/tick
+
+execute unless entity @s[nbt={SelectedItem:{id:"minecraft:fire_charge",tag:{Smoke:1b}}}] run scoreboard players set @s CI.smoke_detect 0
+
+execute as @s[nbt={Inventory:[{Slot:100b,id:"minecraft:leather_boots",tag:{Speed:1b}}]}] run function custom_items:speed_boots/tick
+
+execute unless entity @s[nbt={Inventory:[{Slot:100b,id:"minecraft:leather_boots",tag:{Speed:1b}}]}] run scoreboard players set @s CI.speed_detect 0
